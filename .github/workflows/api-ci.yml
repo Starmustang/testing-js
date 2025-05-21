@@ -29,6 +29,7 @@ jobs:
       - name: Run unit tests
         shell: bash
         run: npm run test
+
   e2e-test:
     runs-on: ubuntu-latest
     container:
@@ -46,7 +47,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Install dependencies
+      - name: Install
         shell: bash
         run: npm ci
       - name: Run e2e tests
@@ -54,7 +55,7 @@ jobs:
         run: npm run test:e2e
         env:
           MONGO_URL: mongodb://test:test123@mongo-e2e:27018/test
-          MONGO_DB: test
+          MONGO_DB_NAME: test
 
   linter:
     runs-on: ubuntu-latest
