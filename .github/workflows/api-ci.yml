@@ -56,7 +56,6 @@ jobs:
           MONGO_URL: mongodb://test:test123@mongo-e2e:27018/test
           MONGO_DB: test
 
-jobs:
   linter:
     runs-on: ubuntu-latest
     steps:
